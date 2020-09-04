@@ -8,10 +8,18 @@ flatten [[1,2,3],["a","b","c"],[1,2,3]]  # => [1,2,3,"a","b","c",1,2,3]
 flatten [[[1,2,3]]] # => [[1,2,3]]
 */
 
-var flatten = function (array){
+let flatten = function (array){
   // return [].concat.apply([], array);
-  return Array.prototype.concat.apply([], array);
   //! ???看不懂
+  let arr = [];
+  array.forEach(el => {
+    // console.log(el);
+    arr = arr.concat(el);
+  });
+  // console.log(arr);
+  return arr
 }
 
 console.log(flatten([[1, 2, 3], ["a", "b", "c"], [1, 2, 3]]));
+// console.log(flatten([[[1,2,3]]]));
+
